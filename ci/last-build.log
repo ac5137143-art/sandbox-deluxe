@@ -1,11 +1,11 @@
 + echo '=== toolchain ==='
 === toolchain ===
 + java -version
-openjdk version "25.0.5" 2026-10-20 LTS
-OpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)
-OpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)
-+ echo JAVA_HOME=/usr/lib/jvm/temurin-25-jdk-amd64
-JAVA_HOME=/usr/lib/jvm/temurin-25-jdk-amd64
+openjdk version "17.0.21" 2026-10-20
+OpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)
+OpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode, sharing)
++ echo JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
 + echo 'ANDROID_SDK_ROOT=/usr/local/lib/android/sdk ANDROID_HOME=/usr/local/lib/android/sdk'
 ANDROID_SDK_ROOT=/usr/local/lib/android/sdk ANDROID_HOME=/usr/local/lib/android/sdk
 + SDK=/usr/local/lib/android/sdk
@@ -49,14 +49,9 @@ android-37.2-beta3
 === gradle ===
 + curl -sSL -o gradle.zip https://services.gradle.org/distributions/gradle-8.13-bin.zip
 + unzip -q -o gradle.zip
-+ export PATH=/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-+ PATH=/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ export PATH=/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/bin:/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/bin:/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 + gradle --version
-WARNING: A restricted method in java.lang.System has been called
-WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/lib/native-platform-0.22-milestone-28.jar)
-WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-WARNING: Restricted methods will be blocked in a future release unless native access is enabled
-
 
 Welcome to Gradle 8.13!
 
@@ -78,25 +73,193 @@ Revision:      073314332697ba45c16c0a0ce1891fa6794179ff
 Kotlin:        2.0.21
 Groovy:        3.0.22
 Ant:           Apache Ant(TM) version 1.10.15 compiled on August 25 2024
-Launcher JVM:  25.0.5 (Eclipse Adoptium 25.0.5+8-LTS)
-Daemon JVM:    /usr/lib/jvm/temurin-25-jdk-amd64 (no JDK specified, using current Java home)
+Launcher JVM:  17.0.21 (Eclipse Adoptium 17.0.21+9)
+Daemon JVM:    /usr/lib/jvm/temurin-17-jdk-amd64 (no JDK specified, using current Java home)
 OS:            Linux 7.0.0-1020-azure amd64
 
 + echo '=== engine tests ==='
 === engine tests ===
 + gradle --no-daemon --console=plain :core:test
-WARNING: A restricted method in java.lang.System has been called
-WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/lib/native-platform-0.22-milestone-28.jar)
-WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-WARNING: Restricted methods will be blocked in a future release unless native access is enabled
-
 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
 Daemon will be stopped at the end of the build 
+
+> Configure project :app
+w: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/build.gradle.kts:19:9: 'resourceConfigurations: MutableSet<String>' is deprecated. Support for resource configurations will be removed. For language resource configurations in applications, use androidResources.localeFilters.
+
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:processResources NO-SOURCE
+> Task :core:processTestResources NO-SOURCE
+> Task :core:compileKotlin
+> Task :core:compileJava NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar
+> Task :core:compileTestKotlin
+> Task :core:compileTestJava NO-SOURCE
+> Task :core:testClasses UP-TO-DATE
+
+> Task :core:test
+
+SimulationTest > viscousLiquidSpreadsSlowerThanWater() PASSED
+
+SimulationTest > lavaFreezesIntoStone() PASSED
+
+SimulationTest > plantsGrowTowardsWater() PASSED
+
+SimulationTest > steamCondensesInTheCold() PASSED
+
+SimulationTest > clonerCopiesMaterials() PASSED
+
+SimulationTest > waterTapKeepsSupplyingWater() PASSED
+
+SimulationTest > electricityIgnitesPetrolVapour() PASSED
+
+SimulationTest > waterAndLavaMakeSteamAndObsidian() PASSED
+
+SimulationTest > waterLevelsOutInAContainer() PASSED
+
+SimulationTest > virusesInfectPlants() PASSED
+
+SimulationTest > brushRespectsIndestructibleCells() PASSED
+
+SimulationTest > engineKeepsUpWithSixtyFramesPerSecond() STANDARD_OUT
+    PERF: 138000 cells, 42312 particles -> 3.3333333333333335 ms/step
+
+SimulationTest > engineKeepsUpWithSixtyFramesPerSecond() PASSED
+
+SimulationTest > annihilatorDeletesEverything() PASSED
+
+SimulationTest > gravelPilesSteeperThanSand() PASSED
+
+SimulationTest > indestructibleWallsSurviveExplosions() PASSED
+
+SimulationTest > scenesRunWithoutBlowingUp() PASSED
+
+SimulationTest > woodBurnsIntoAsh() PASSED
+
+SimulationTest > gunpowderDetonatesInAChain() PASSED
+
+SimulationTest > sandSinksThroughWater() PASSED
+
+SimulationTest > acidDissolvesMetalAndReleasesHydrogen() PASSED
+
+SimulationTest > heatDiffusesAndCoolsTowardsAmbient() PASSED
+
+SimulationTest > batteryLightsUpAConductor() PASSED
+
+SimulationTest > sceneFilesRoundTrip() PASSED
+
+SimulationTest > waterBoilsOnAHeaterAndCondensesAwayFromIt() PASSED
+
+SimulationTest > tntExplosionIsStrongerThanGunpowder() PASSED
+
+SimulationTest > iceMeltsNearAHeater() PASSED
+
+SimulationTest > oilFloatsOnWater() PASSED
+
+SimulationTest > sandFallsAndPilesWithoutFloating() PASSED
+
+[Incubating] Problems report is available at: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1m 27s
+4 actionable tasks: 4 executed
++ echo '=== apk ==='
+=== apk ===
++ gradle --no-daemon --console=plain :app:assembleDebug
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateDebugBuildConfig
+> Task :core:compileKotlin UP-TO-DATE
+> Task :core:compileJava NO-SOURCE
+> Task :core:processResources NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:mergeDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :app:desugarDebugFileDependencies
+> Task :app:processDebugResources
+> Task :app:checkDebugDuplicateClasses
+> Task :app:compileDebugKotlin
+> Task :app:mergeExtDexDebug
+
+> Task :app:compileDebugKotlin FAILED
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:34:9 Platform declaration clash: The following declarations have the same JVM signature (setBrushDp(F)V):
+    fun `<set-brushDp>`(`<set-?>`: Float): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setBrushDp(value: Float): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:36:9 Platform declaration clash: The following declarations have the same JVM signature (setCoverage(I)V):
+    fun `<set-coverage>`(`<set-?>`: Int): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setCoverage(value: Int): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:38:9 Platform declaration clash: The following declarations have the same JVM signature (setTool(Ldev/sandbox/app/Tool;)V):
+    fun `<set-tool>`(`<set-?>`: Tool): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setTool(value: Tool): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:44:9 Platform declaration clash: The following declarations have the same JVM signature (setSpeed(F)V):
+    fun `<set-speed>`(`<set-?>`: Float): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setSpeed(value: Float): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:46:9 Platform declaration clash: The following declarations have the same JVM signature (setQuality(I)V):
+    fun `<set-quality>`(`<set-?>`: Int): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setQuality(value: Int): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:48:9 Platform declaration clash: The following declarations have the same JVM signature (setInvertGravity(Z)V):
+    fun `<set-invertGravity>`(`<set-?>`: Boolean): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setInvertGravity(value: Boolean): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:52:9 Platform declaration clash: The following declarations have the same JVM signature (setHaptics(Z)V):
+    fun `<set-haptics>`(`<set-?>`: Boolean): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setHaptics(value: Boolean): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:95:5 Platform declaration clash: The following declarations have the same JVM signature (setTool(Ldev/sandbox/app/Tool;)V):
+    fun `<set-tool>`(`<set-?>`: Tool): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setTool(value: Tool): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:97:5 Platform declaration clash: The following declarations have the same JVM signature (setBrushDp(F)V):
+    fun `<set-brushDp>`(`<set-?>`: Float): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setBrushDp(value: Float): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:102:5 Platform declaration clash: The following declarations have the same JVM signature (setCoverage(I)V):
+    fun `<set-coverage>`(`<set-?>`: Int): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setCoverage(value: Int): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:118:5 Platform declaration clash: The following declarations have the same JVM signature (setSpeed(F)V):
+    fun `<set-speed>`(`<set-?>`: Float): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setSpeed(value: Float): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:128:5 Platform declaration clash: The following declarations have the same JVM signature (setQuality(I)V):
+    fun `<set-quality>`(`<set-?>`: Int): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setQuality(value: Int): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:133:5 Platform declaration clash: The following declarations have the same JVM signature (setInvertGravity(Z)V):
+    fun `<set-invertGravity>`(`<set-?>`: Boolean): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setInvertGravity(value: Boolean): Unit defined in dev.sandbox.app.SandboxViewModel
+e: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/app/src/main/kotlin/dev/sandbox/app/SandboxViewModel.kt:145:5 Platform declaration clash: The following declarations have the same JVM signature (setHaptics(Z)V):
+    fun `<set-haptics>`(`<set-?>`: Boolean): Unit defined in dev.sandbox.app.SandboxViewModel
+    fun setHaptics(value: Boolean): Unit defined in dev.sandbox.app.SandboxViewModel
+
+[Incubating] Problems report is available at: file:///home/runner/work/sandbox-deluxe/sandbox-deluxe/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-25.0.5
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
@@ -104,4 +267,11 @@ FAILURE: Build failed with an exception.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 13s
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 2m 16s
+24 actionable tasks: 22 executed, 2 up-to-date
