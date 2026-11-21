@@ -17,6 +17,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # AGP 8.9 and Kotlin 2.1 need a JDK 17/21 toolchain; the runner default is newer.
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
       # The real work happens in scripts/ci-build.sh so that the full output of a failing run
       # always lands in ci-build.log and can be published below.
       - name: Tests and APK
