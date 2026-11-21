@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sandbox Deluxe</string>
+    <string name="tagline">Песочница с настоящей физикой</string>
+
+    <string name="tool_brush">Кисть</string>
+    <string name="tool_line">Линия</string>
+    <string name="tool_rect">Рамка</string>
+    <string name="tool_eraser">Ластик</string>
+    <string name="tool_picker">Пипетка</string>
+
+    <string name="action_play">Продолжить</string>
+    <string name="action_pause">Пауза</string>
+    <string name="action_step">Шаг</string>
+    <string name="action_clear">Очистить</string>
+    <string name="action_menu">Меню</string>
+    <string name="action_thermal">Тепловизор</string>
+    <string name="action_search">Поиск элемента</string>
+    <string name="action_close">Закрыть</string>
+    <string name="action_save">Сохранить</string>
+    <string name="action_load">Загрузить</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_export">Скриншот</string>
+
+    <string name="brush_size">Размер кисти</string>
+    <string name="speed">Скорость</string>
+    <string name="coverage">Плотность</string>
+    <string name="gravity">Гравитация</string>
+
+    <string name="tab_scenes">Сцены</string>
+    <string name="tab_saves">Мои сцены</string>
+    <string name="tab_settings">Настройки</string>
+
+    <string name="stat_fps">FPS</string>
+    <string name="stat_particles">Частиц</string>
+    <string name="stat_cells">Ячеек</string>
+
+    <string name="search_hint">Название элемента...</string>
+    <string name="empty_saves">Пока нет сохранённых сцен</string>
+    <string name="save_dialog_title">Название сцены</string>
+    <string name="save_hint">Например, «Вулкан 2»</string>
+    <string name="toast_saved">Сцена сохранена</string>
+    <string name="toast_exported">Скриншот сохранён в галерею</string>
+    <string name="toast_export_failed">Не удалось сохранить скриншот</string>
+    <string name="thermal_on">Тепловизор включён</string>
+
+    <string name="settings_quality">Детализация</string>
+    <string name="settings_quality_low">Низкая (макс. FPS)</string>
+    <string name="settings_quality_medium">Средняя</string>
+    <string name="settings_quality_high">Высокая (больше частиц)</string>
+    <string name="settings_invert">Инвертировать гравитацию</string>
+    <string name="settings_glow">Свечение горячих материалов</string>
+    <string name="settings_haptics">Вибрация при рисовании</string>
+    <string name="settings_about">О приложении</string>
+    <string name="about_text">Sandbox Deluxe — падающая песочница с термодинамикой, химией и взрывами.\n\nДвижок: собственный клеточный автомат, уравнение теплопроводности, таблица реакций. 60+ материалов, тепловизор, сохранение сцен, экспорт скриншотов.\n\nСобрано автоматически через GitHub Actions.</string>
+</resources>
