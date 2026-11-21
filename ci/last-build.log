@@ -1,0 +1,107 @@
++ echo '=== toolchain ==='
+=== toolchain ===
++ java -version
+openjdk version "25.0.5" 2026-10-20 LTS
+OpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)
+OpenJDK 64-Bit Server VM Temurin-25.0.5+8 (build 25.0.5+8-LTS, mixed mode, sharing)
++ echo JAVA_HOME=/usr/lib/jvm/temurin-25-jdk-amd64
+JAVA_HOME=/usr/lib/jvm/temurin-25-jdk-amd64
++ echo 'ANDROID_SDK_ROOT=/usr/local/lib/android/sdk ANDROID_HOME=/usr/local/lib/android/sdk'
+ANDROID_SDK_ROOT=/usr/local/lib/android/sdk ANDROID_HOME=/usr/local/lib/android/sdk
++ SDK=/usr/local/lib/android/sdk
++ SDKMANAGER=/usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager
++ '[' -n /usr/local/lib/android/sdk ']'
++ '[' -x /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager ']'
++ yes
++ /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
+yes: standard output: Broken pipe
++ true
++ /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --install 'platforms;android-35' 'build-tools;35.0.0' platform-tools
+Loading package information...                                                  Loading local repository...                                                     [                                       ] 3% Loading local repository...        [                                       ] 3% Fetch remote repository...         [=                                      ] 3% Fetch remote repository...         [=                                      ] 4% Fetch remote repository...         [=                                      ] 5% Fetch remote repository...         [==                                     ] 5% Fetch remote repository...         [==                                     ] 6% Fetch remote repository...         [==                                     ] 7% Fetch remote repository...         [==                                     ] 7% Computing updates...               [===                                    ] 8% Computing updates...               [===                                    ] 10% Computing updates...              [===                                    ] 10% Installing Android SDK Platform-To[===                                    ] 10% Downloading platform-tools_r37.0.3[====                                   ] 10% Downloading platform-tools_r37.0.3[====                                   ] 11% Downloading platform-tools_r37.0.3[====                                   ] 12% Downloading platform-tools_r37.0.3[=====                                  ] 13% Downloading platform-tools_r37.0.3[=====                                  ] 14% Downloading platform-tools_r37.0.3[=====                                  ] 15% Downloading platform-tools_r37.0.3[======                                 ] 15% Downloading platform-tools_r37.0.3[======                                 ] 16% Downloading platform-tools_r37.0.3[======                                 ] 17% Downloading platform-tools_r37.0.3[=======                                ] 18% Downloading platform-tools_r37.0.3[=======                                ] 19% Downloading platform-tools_r37.0.3[=======                                ] 20% Downloading platform-tools_r37.0.3[========                               ] 20% Downloading platform-tools_r37.0.3[========                               ] 21% Downloading platform-tools_r37.0.3[========                               ] 22% Downloading platform-tools_r37.0.3[=========                              ] 23% Downloading platform-tools_r37.0.3[=========                              ] 24% Downloading platform-tools_r37.0.3[=========                              ] 25% Downloading platform-tools_r37.0.3[==========                             ] 25% Downloading platform-tools_r37.0.3[==========                             ] 26% Downloading platform-tools_r37.0.3[==========                             ] 27% Downloading platform-tools_r37.0.3[===========                            ] 28% Downloading platform-tools_r37.0.3[===========                            ] 29% Downloading platform-tools_r37.0.3[===========                            ] 30% Downloading platform-tools_r37.0.3[============                           ] 30% Downloading platform-tools_r37.0.3[============                           ] 31% Downloading platform-tools_r37.0.3[============                           ] 32% Downloading platform-tools_r37.0.3[============                           ] 33% Downloading platform-tools_r37.0.3[============                           ] 33% Unzipping...                      [============                           ] 33% Unzipping... platform-tools/NOTICE[=============                          ] 33% Unzipping... platform-tools/NOTICE[=============                          ] 33% Unzipping... platform-tools/adb   [=============                          ] 34% Unzipping... platform-tools/adb   [=============                          ] 35% Unzipping... platform-tools/adb   [==============                         ] 35% Unzipping... platform-tools/adb   [==============                         ] 36% Unzipping... platform-tools/adb   [==============                         ] 37% Unzipping... platform-tools/adb   [===============                        ] 38% Unzipping... platform-tools/adb   [===============                        ] 39% Unzipping... platform-tools/adb   [===============                        ] 40% Unzipping... platform-tools/adb   [================                       ] 40% Unzipping... platform-tools/adb   [================                       ] 41% Unzipping... platform-tools/adb   [================                       ] 42% Unzipping... platform-tools/adb   [=================                      ] 43% Unzipping... platform-tools/adb   [=================                      ] 44% Unzipping... platform-tools/adb   [=================                      ] 44% Unzipping... platform-tools/etc1to[=================                      ] 45% Unzipping... platform-tools/etc1to[=================                      ] 45% Unzipping... platform-tools/fastbo[==================                     ] 45% Unzipping... platform-tools/fastbo[==================                     ] 46% Unzipping... platform-tools/fastbo[==================                     ] 47% Unzipping... platform-tools/fastbo[===================                    ] 48% Unzipping... platform-tools/fastbo[===================                    ] 48% Unzipping... platform-tools/hprof-[===================                    ] 48% Unzipping... platform-tools/lib64/[===================                    ] 49% Unzipping... platform-tools/lib64/[===================                    ] 49% Unzipping... platform-tools/make_f[===================                    ] 50% Unzipping... platform-tools/make_f[===================                    ] 50% Unzipping... platform-tools/mke2fs[====================                   ] 50% Unzipping... platform-tools/mke2fs[====================                   ] 51% Unzipping... platform-tools/mke2fs[====================                   ] 51% Unzipping... platform-tools/source[====================                   ] 51% Unzipping... platform-tools/sqlite[====================                   ] 52% Unzipping... platform-tools/sqlite[=====================                  ] 53% Unzipping... platform-tools/sqlite[=====================                  ] 54% Unzipping... platform-tools/sqlite[=====================                  ] 55% Unzipping... platform-tools/sqlite[=======================================] 100% Unzipping... platform-tools/sqlit
+
++ ls /usr/local/lib/android/sdk/platforms
+android-34
+android-34-ext10
+android-34-ext11
+android-34-ext12
+android-34-ext8
+android-35
+android-35-ext14
+android-35-ext15
+android-36
+android-36-ext18
+android-36-ext19
+android-36.1
+android-37.0
+android-37.1
+android-37.2
+android-37.2-beta1
+android-37.2-beta2
+android-37.2-beta3
++ ls /usr/local/lib/android/sdk/build-tools
+34.0.0
+35.0.0
+35.0.1
+36.0.0
+36.1.0
+37.0.0
++ echo '=== gradle ==='
+=== gradle ===
++ curl -sSL -o gradle.zip https://services.gradle.org/distributions/gradle-8.13-bin.zip
++ unzip -q -o gradle.zip
++ export PATH=/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ PATH=/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ gradle --version
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/lib/native-platform-0.22-milestone-28.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+
+Welcome to Gradle 8.13!
+
+Here are the highlights of this release:
+ - Daemon JVM auto-provisioning
+ - Enhancements for Scala plugin and JUnit testing
+ - Improvements for build authors and plugin developers
+
+For more details see https://docs.gradle.org/8.13/release-notes.html
+
+
+------------------------------------------------------------
+Gradle 8.13
+------------------------------------------------------------
+
+Build time:    2025-02-25 09:22:14 UTC
+Revision:      073314332697ba45c16c0a0ce1891fa6794179ff
+
+Kotlin:        2.0.21
+Groovy:        3.0.22
+Ant:           Apache Ant(TM) version 1.10.15 compiled on August 25 2024
+Launcher JVM:  25.0.5 (Eclipse Adoptium 25.0.5+8-LTS)
+Daemon JVM:    /usr/lib/jvm/temurin-25-jdk-amd64 (no JDK specified, using current Java home)
+OS:            Linux 7.0.0-1020-azure amd64
+
++ echo '=== engine tests ==='
+=== engine tests ===
++ gradle --no-daemon --console=plain :core:test
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/home/runner/work/sandbox-deluxe/sandbox-deluxe/gradle-8.13/lib/native-platform-0.22-milestone-28.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+25.0.5
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 13s
